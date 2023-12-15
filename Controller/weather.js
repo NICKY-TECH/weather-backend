@@ -13,7 +13,7 @@ const { latitudeSchema, weatherInfoSchema } = require(join(
 
 const getWeather = async (req, res) => {
   const { city, lat = "", long = "" } = req.body;
-  console.log(req.body)
+  console.log(req.body);
   try {
     if (lat || long) {
       const { error } = latitudeSchema(req.body);
@@ -21,7 +21,7 @@ const getWeather = async (req, res) => {
         return res.status(422).json({
           success: false,
           message: "Validation failed",
-          data: {},
+          data: error,
         });
       axios
         .get(
@@ -34,7 +34,9 @@ const getWeather = async (req, res) => {
             )
             .then((outcome) => {
               return res.status(200).json({
-                reply: outcome.data,
+                success: true,
+                message: "Data was successfully retrieved",
+                data: outcome.data,
               });
             });
         });
@@ -44,7 +46,7 @@ const getWeather = async (req, res) => {
         return res.status(422).json({
           success: false,
           message: "Validation failed",
-          data: {},
+          data: error,
         });
       axios
         .get(
@@ -53,7 +55,9 @@ const getWeather = async (req, res) => {
         .then((outcome) => {
           console.log(outcome.data);
           return res.status(200).json({
-            reply: outcome.data,
+            success: true,
+            message: "Data was successfully retrieved",
+            data: outcome.data,
           });
         });
     } else if (Object.entries(req.body).length === 0) {
@@ -68,7 +72,7 @@ const getWeather = async (req, res) => {
     return res.status(500).json({
       success: false,
       message: "An error occurred",
-      data: e,
+      data: {},
     });
   }
 };
