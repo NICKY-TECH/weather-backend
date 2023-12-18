@@ -83,6 +83,7 @@ const login = async (req, res) => {
     success: true,
     message: "User successfully logged in",
     data: {
+    user: found.name,
     token: token
     },
   });
