@@ -20,14 +20,16 @@ const app = express();
 
 app.use(cors({
   origin:['http://localhost:5173',
-  "https://weather-frontend-beige.vercel.app",
-  "https://lucent-axolotl-005c7f.netlify.app"
+  "https://weather-frontend-beige.vercel.app/",
+  "https://lucent-axolotl-005c7f.netlify.app/"
 ]
 }));
 
 app.use(express.json());
 
 app.use("/", weatherRouter);
+
+console.log(720000000000000000+80)
 
 app.use("/", userRouter);
 
