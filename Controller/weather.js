@@ -39,7 +39,9 @@ const getWeather = async (req, res) => {
                 data: outcome.data,
               });
             });
-        });
+        }).catch((e)=>{
+          console.log(`error when searching for country by latitude ${e}`)
+        })
     } else if (city) {
       const { error } = weatherInfoSchema(req.body);
       if (error)
@@ -59,7 +61,9 @@ const getWeather = async (req, res) => {
             message: "Data was successfully retrieved",
             data: outcome.data,
           });
-        });
+        }).catch((e)=>{
+          console.log(`error when searching for country by city ${e}`)
+        })
     } else if (Object.entries(req.body).length === 0) {
       return res.status(400).json({
         success: false,
