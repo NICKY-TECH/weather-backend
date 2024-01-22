@@ -40,7 +40,11 @@ const getWeather = async (req, res) => {
               });
             });
         }).catch((e)=>{
-          console.log(`error when searching for country by latitude ${e}`)
+          return res.status(404).json({
+            success: false,
+            message: "Invalid country entry",
+            data: {},
+          });
         })
     } else if (city) {
       const { error } = weatherInfoSchema(req.body);
