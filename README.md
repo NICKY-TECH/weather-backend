@@ -19,6 +19,12 @@
 3. MVC PATTERN
 4. ENVIRONMENTAL VARIABLES
 
+## PACKAGES USED
+1. [REACT-TOASTIFY FOR TOAST NOTIFICATION](https://www.npmjs.com/package/react-toastify)
+2. [REACT-ROUTER-DOM](https://www.npmjs.com/package/react-router-dom)
+3. [YUP](https://www.npmjs.com/package/yup)
+4. [FORMIK](https://www.npmjs.com/package/formik)
+
 ## CONCEPTS LEARNT DURING DEVELOPMENT WORKFLOW
 ### I learnt about loaders in react and its issues.
 * Below are some resources that will help you out in understanding loaders in react.
