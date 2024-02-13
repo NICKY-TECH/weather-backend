@@ -20,8 +20,8 @@ const app = express();
 
 app.use(cors({
   origin:['http://localhost:5173',
-  "https://weather-frontend-beige.vercel.app/",
-  "https://lucent-axolotl-005c7f.netlify.app/"
+  "https://weather-frontend-beige.vercel.app//*",
+  "https://lucent-axolotl-005c7f.netlify.app/*"
 ]
 }));
 
